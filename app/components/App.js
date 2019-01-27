@@ -43,7 +43,9 @@ export class App extends React.Component{
               </Col>
               <Col md={7}>
                 <Graph/>
-				<CategoryChart categories={[{ name: "Income", thisMonth: "12", projected: "11"}]}/>
+				<CategoryChart categories={[{ name: "Income", months: [
+					2302, 3204, 3482, 3824, 2348, 3247, 4327, 4327
+				], projected: [11]}]}/>
               </Col>
             </Row>
           </Grid>

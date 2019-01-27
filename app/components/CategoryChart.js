@@ -1,5 +1,6 @@
 import React from 'react';
 import {Table} from 'react-bootstrap'
+import {MonthColumns} from './MonthColumns'
 
 export class CategoryChart extends React.Component{
 	constructor(props){
@@ -11,8 +12,8 @@ export class CategoryChart extends React.Component{
 		const categories = this.state.categories.map(category => (
 			<tr>
 				<th>{category.name}</th>
-				<th>{category.thisMonth}</th>
-				<th>{category.projected}</th>
+				<MonthColumns months={category.months}/>
+				<MonthColumns months={category.projected}/>
 			</tr>
 		));
 		return (
@@ -21,8 +22,19 @@ export class CategoryChart extends React.Component{
 					<thead>
 						<tr>
 							<th>Category</th>
-							<th>This month</th>
-							<th>Projected Next Month</th>
+							<th>11m ago</th>
+							<th></th>
+							<th></th>
+							<th></th>
+							<th></th>
+							<th>6m ago</th>
+							<th></th>
+							<th></th>
+							<th></th>
+							<th></th>
+							<th></th>
+							<th>Now</th>
+							<th>Projected</th>
 						</tr>
 					</thead>
 					<tbody>
