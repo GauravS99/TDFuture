@@ -13,7 +13,7 @@ export class TitleBar extends React.Component{
 			<div className="content colorMain">
 				<div className="heading">
 					<div className="title">
-					Forcas
+					Forecas
 					</div>	
 					<div className="right text">
 					Log Out

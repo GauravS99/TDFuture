@@ -13,7 +13,7 @@ export class Accounts extends React.Component{
 		));
 		return (
 			<div>
-				<ButtonGroup vertical>
+				<ButtonGroup vertical block>
 					{ accounts }
 				</ButtonGroup>
 			</div>
