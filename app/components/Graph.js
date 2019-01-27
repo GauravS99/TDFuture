@@ -5,12 +5,7 @@ export class Graph extends React.Component {
     
     render() {
         return (
-            <div
-                style={{
-                width: "400px",
-                height: "300px"
-                }}
-            >
+            <div className="graph content">
                 <Chart
                 data={[
                     {

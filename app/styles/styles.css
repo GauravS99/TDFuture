@@ -51,4 +51,10 @@
 	display: inline;
 }
 
+.graph {
+	width: 400px;
+	height: 300px;
+	/*padding-left: 200px*/
+}
+
 
