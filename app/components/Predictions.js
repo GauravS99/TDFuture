@@ -26,6 +26,5 @@ export async function getPredictions(data, model) {
 			break;
 	}
 	const tModel = await tf.loadModel(m)
-	console.log(tModel.predict(data).dataSync())
-	return  
+	return  tModel.predict(data).dataSync()
 }
