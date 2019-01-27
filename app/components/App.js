@@ -35,7 +35,7 @@ export class App extends React.Component{
                   <Accounts accounts={ accounts }/>
                 </Row>
                 <Row>
-                  <HintBox hint={ "Hi I'm a hint" }/>
+                  <HintBox hint={ "A penny saved is a penny earned." }/>
                 </Row>
                 <Row>
                   
