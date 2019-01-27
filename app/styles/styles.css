@@ -1,12 +1,54 @@
 /*Global========================================================*/
 .colorAccent{
-	background-color: green;
+	background-color: gray;
+}
+
+.text{
+	font-size: 18pt;
 }
 
 /*Sidebar=======================================================*/
 .sidebar{
 	position: fixed;
 	height: 100%;
-	width: 300px;
+	width: 120px;
 }
+
+.icon{
+	width: 90px;
+	height: 90px;
+	background-color: white;
+	margin-left: 15px;
+	margin-top: 50px;
+}
+
+/*Content*/
+
+.content{
+	margin-left: 120px
+}
+.inline{
+	display: inline;
+}
+
+.right{
+	float: right;
+}
+
+.welcome{
+	color: gray;
+	font-size: 30pt;
+	padding-left: 20px;
+	margin-top: 10px;
+}
+
+
+.heading{
+	padding: 20px;
+}
+.title{
+	font-size: 30pt;
+	display: inline;
+}
+
 
