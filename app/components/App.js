@@ -2,6 +2,7 @@ import React from 'react';
 import {Sidebar} from './Sidebar'
 import {TitleBar} from './TitleBar'
 import {Accounts} from './Accounts'
+import {HintBox} from './HintBox'
 import {Grid, Row, Col} from 'react-bootstrap'
 
 export class App extends React.Component{
@@ -21,6 +22,7 @@ export class App extends React.Component{
 				<Col sm={9} md={6}>
 					<TitleBar name="John"/>
 					<Accounts accounts={ accounts }/>
+					<HintBox hint={ "Hi I'm a hint" }/>
 				</Col>
 			</Row>
 		</Grid>
