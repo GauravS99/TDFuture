@@ -43,9 +43,14 @@ export class App extends React.Component{
               </Col>
               <Col md={7}>
                 <Graph/>
-				<CategoryChart categories={[{ name: "Income", months: [
-					2302, 3204, 3482, 3824, 2348, 3247, 4327, 4327
-				], projected: [11]}]}/>
+				<CategoryChart categories={
+          [{ name: "Bills", months: generateRandomData(5000, 0, 0, 0, 0), projected: [11]},
+          { name: "Income", months: generateRandomData(7000, 100, 0, 2, 3), projected: [11]},
+          { name: "Groceries", months: generateRandomData(400, 30, 10, 5, 10), projected: [11]},
+          { name: "Food", months: generateRandomData(120, 30, 10, 4, 8), projected: [11]},
+          { name: "Miscellaneous", months: generateRandomData(200, 20, 15, 3, 5), projected: [11]},
+          { name: "Entertainment", months: generateRandomData(50, 20, 4, 3, 5), projected: [11]}
+          ]}/>
               </Col>
             </Row>
           </Grid>
@@ -55,20 +60,20 @@ export class App extends React.Component{
 }
 
 
-generateRandomData(AVG_SPEND, STD_DEV, BIAS_AVG, BIAS_STDDEV, BIAS_PERMONTH){
+function generateRandomData(AVG_SPEND, STD_DEV, BIAS_AVG, BIAS_STDDEV, BIAS_PERMONTH){
   let data = [];
 
-  inc = this.randomNorm(AVG_SPEND, STD_DEV)
-  inc = Math.abs(round(inc, 0))
-  bias =  this.randomNorm(BIAS_AVG, BIAS_STDDEV) 
-  for(j = 0; j < 11; j++) {//  Data point for each month
-  r = Math.round(random.normal(bias * j, BIAS_PERMONTH), 2)
+  let inc = randomNorm(AVG_SPEND, STD_DEV)
+  inc = Math.abs(Math.round(inc, 0))
+  let bias =  randomNorm(BIAS_AVG, BIAS_STDDEV) 
+  for(let j = 0; j < 11; j++) {//  Data point for each month
+  let r = Math.round(randomNorm(bias * j, BIAS_PERMONTH), 2)
   data[j] = inc + r;
   }
   return data;
 }
 
   //pass in the mean and standard deviation
- randomNorm(mean, stdev) {
-return Math.round((Math.random()*2-1)+(Math.random()*2-1)+(Math.random()*2-1))*stdev+mean);
- }
+function randomNorm(mean, stdev) {
+  return (Math.round((Math.random()*2-1)+(Math.random()*2-1)+(Math.random()*2-1))*stdev+mean);
+}
