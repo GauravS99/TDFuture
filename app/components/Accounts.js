@@ -9,7 +9,7 @@ export class Accounts extends React.Component{
 	
 	render(){
 		const accounts = this.state.accounts.map(account => (
-			<Button className = "account">{account.name} - {account.bal}</Button>
+			<Button className = "account">{account.name} <br/> ${account.bal}</Button>
 		));
 		return (
 			<div>

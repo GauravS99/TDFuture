@@ -11,11 +11,6 @@ export class TitleBar extends React.Component{
 	render(){
 		return (
 			<div className="content colorMain">
-				<div className="heading">
-					<div className="right text def-text">
-					Log Out
-					</div>
-				</div>
 				<div className="welcome headingColor def-text">
 					Welcome back, {this.props.name}
 				</div>

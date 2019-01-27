@@ -20,6 +20,11 @@
 	font-family: Oxygen;
 }
 
+.def-text-bold {
+	font-family: Oxygen;
+	font-weight: bold;
+}
+
 .center-text{
 	text-align: center;
 }
@@ -29,7 +34,6 @@
 	position: fixed;
 	height: 100%;
 	width: 150px;
-	margin: 0 auto;
 	text-align: center;
 }
 
@@ -41,6 +45,10 @@
 	margin-top: 50px;
 }
 
+.flexBox{
+	display: flex;
+	flex-direction: column;
+}
 /*Content*/
 
 .mainContent{
@@ -68,12 +76,13 @@ padding-bottom: 30px;
 
 
 .heading{
-	padding: 20px;
+	flex: 1;
+	margin-left: auto;
+	margin-right: auto;
+	width: 90px;
 }
 
 .title{
-	/* font-size: 30pt;
-	display: inline; */
 	width: 76px;
 	height: 28px;
 	font-size: 22px;
@@ -82,10 +91,11 @@ padding-bottom: 30px;
 	font-stretch: normal;
 	line-height: 1.27;
 	letter-spacing: normal;
-	text-align: right;
 	color: #555555;
 	margin-top: 48px;
-	display: inline-block
+	margin-left: auto;
+	margin-right: auto;
+	flex: 1;
 }
 
 .graph {
@@ -105,4 +115,9 @@ padding-bottom: 30px;
 	background-color: #ffffff;
 	margin-top: 10px;
 	margin-bottom: 10px;
+}
+
+.sideItem{
+	margin-top: 30px;
+	margin-bottom: 30px;
 }
