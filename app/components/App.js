@@ -53,3 +53,22 @@ export class App extends React.Component{
      );
    }
 }
+
+
+generateRandomData(AVG_SPEND, STD_DEV, BIAS_AVG, BIAS_STDDEV, BIAS_PERMONTH){
+  let data = [];
+
+  inc = this.randomNorm(AVG_SPEND, STD_DEV)
+  inc = Math.abs(round(inc, 0))
+  bias =  this.randomNorm(BIAS_AVG, BIAS_STDDEV) 
+  for(j = 0; j < 11; j++) {//  Data point for each month
+  r = Math.round(random.normal(bias * j, BIAS_PERMONTH), 2)
+  data[j] = inc + r;
+  }
+  return data;
+}
+
+  //pass in the mean and standard deviation
+ randomNorm(mean, stdev) {
+return Math.round((Math.random()*2-1)+(Math.random()*2-1)+(Math.random()*2-1))*stdev+mean);
+ }
