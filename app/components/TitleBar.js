@@ -1,6 +1,6 @@
 import React from 'react';
 
-export class Content extends React.Component{
+export class TitleBar extends React.Component{
 
 	constructor(props){
 		super(props);
