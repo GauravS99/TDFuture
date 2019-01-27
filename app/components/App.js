@@ -13,23 +13,23 @@ import {Grid, Row, Col} from 'react-bootstrap'
 import {getPredictions} from './Predictions'
 
 export class App extends React.Component{
-	
-  constructor(props){
-    super(props);
+  
+  async componentDidMount() {
 	var bills = generateRandomData(5000, 0, 0, 0, 0);
 	var income = generateRandomData(7000, 100, 0, 2, 3);
 	var miscellaneous = generateRandomData(200, 20, 15, 3, 5);
 	var food = generateRandomData(120, 30, 10, 4, 8);
 	var groceries = generateRandomData(400, 30, 10, 5, 10);
 	var entertainment = generateRandomData(50, 20, 4, 3, 5);
-    this.state = {bills: {name: "Bills", months: bills, projected: project(bills, 'bills')},
+    var st = {bills: {name: "Bills", months: bills, projected: project(bills, 'bills')},
                   income: { name: "Income", months: income, projected: project(income, 'income')},
                   miscellaneous: { name: "Miscellaneous", months: miscellaneous, projected: project(miscellaneous, 'miscellaneous')},
                   food: {name: "Food", months: food, projected: project(food, 'food')},
                   groceries: { name: "Groceries", months: groceries, projected: project(groceries, 'groceries')},
                   entertainment: { name: "Entertainment", months: entertainment, projected: project(entertainment, 'entertainment')}
               };
-  }
+	this.setState(st);
+}
 	
    render(){
 	const accounts = [
@@ -75,13 +75,13 @@ export class App extends React.Component{
 }
 
 function project(data, model){
-		var a1 = getPredictions(tf.tensor(data), model);
+		let a1 = getPredictions(tf.tensor(data, [1, 11, 1]), model);
 		print(a1)
-		var a2 = getPredictions(tf.tensor([data.slice(1), a1[a1.length-1]], [1, 11, 1]), model);
-		var a3 = getPredictions(tf.tensor([a1.slice(1), a2[a2.length-1]], [1, 11, 1]), model);
-		var a4 = getPredictions(tf.tensor([a2.slice(1), a3[a3.length-1]], [1, 11, 1]), model);
-		var a5 = getPredictions(tf.tensor([a3.slice(1), a4[a4.length-1]], [1, 11, 1]), model);
-		var a6 = getPredictions(tf.tensor([a4.slice(1), a5[a5.length-1]], [1, 11, 1]), model);
+		let a2 = getPredictions(tf.tensor(data.slice(1).concat(a1[a1.length-1]), [1, 11, 1]), model);
+		let a3 = getPredictions(tf.tensor(a1.slice(1).concat(a2[a2.length-1]), [1, 11, 1]), model);
+		let a4 = getPredictions(tf.tensor(a2.slice(1).concat(a3[a3.length-1]), [1, 11, 1]), model);
+		let a5 = getPredictions(tf.tensor(a3.slice(1).concat(a4[a4.length-1]), [1, 11, 1]), model);
+		let a6 = getPredictions(tf.tensor(a4.slice(1).concat(a5[a5.length-1]), [1, 11, 1]), model);
 		return [a1[a1.length-1], a2[a2.length-1], a3[a3.length-1], a4[a4.length-1], a5[a5.length-1], a6[a6.length-1]];
 	}
 

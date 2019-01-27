@@ -1,6 +1,6 @@
 import * as tf from '@tensorflow/tfjs';
 
-export async function getPredictions(data, model) {
+export function getPredictions(data, model) {
 	var m
 	switch (model) {
 		case 'bills':
@@ -25,6 +25,6 @@ export async function getPredictions(data, model) {
 			m = ""
 			break;
 	}
-	const tModel = await tf.loadModel(m)
+	const tModel = tf.loadModel(m)
 	return  tModel.predict(data).dataSync()
 }
