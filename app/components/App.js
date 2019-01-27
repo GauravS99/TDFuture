@@ -13,7 +13,21 @@ import {Grid, Row, Col} from 'react-bootstrap'
 import {getPredictions} from './Predictions'
 
 export class App extends React.Component{
-   render(){
+  constructor(props){
+    super(props);
+
+    this.state = {bills: {name: "Bills", months: generateRandomData(5000, 0, 0, 0, 0), projected: []},
+                  income: { name: "Income", months: generateRandomData(7000, 100, 0, 2, 3), projected: []},
+                  miscellaneous: { name: "Miscellaneous", months: generateRandomData(200, 20, 15, 3, 5), projected: []},
+                  food: {name: "Food", months: generateRandomData(120, 30, 10, 4, 8), projected: []},
+                  groceries: { name: "Groceries", months: generateRandomData(400, 30, 10, 5, 10), projected: []},
+                  entertainment: { name: "Entertainment", months: generateRandomData(50, 20, 4, 3, 5), projected: []}
+              };
+
+  }
+  
+  
+  render(){
     getPredictions(tf.tensor([3000, 3029, 4732, 4563, 2038, 3823, 4837, 3746, 2374, 3546, 3445], [1, 11, 1]), 'bills')
 	   
 	const accounts = [
@@ -44,18 +58,26 @@ export class App extends React.Component{
               <Col md={7}>
                 <Graph/>
 				<CategoryChart categories={
-          [{ name: "Bills", months: generateRandomData(5000, 0, 0, 0, 0), projected: [11]},
-          { name: "Income", months: generateRandomData(7000, 100, 0, 2, 3), projected: [11]},
-          { name: "Groceries", months: generateRandomData(400, 30, 10, 5, 10), projected: [11]},
-          { name: "Food", months: generateRandomData(120, 30, 10, 4, 8), projected: [11]},
-          { name: "Miscellaneous", months: generateRandomData(200, 20, 15, 3, 5), projected: [11]},
-          { name: "Entertainment", months: generateRandomData(50, 20, 4, 3, 5), projected: [11]}
+          [this.state.bills,
+          this.state.income,
+          this.state.miscellaneous,
+          this.state.food,
+          this.state.entertainment
           ]}/>
               </Col>
             </Row>
           </Grid>
          </div>
      );
+   }
+
+   onRefresh(){
+      this.setState({bills: {name: "Bills", months: generateRandomData(5000, 0, 0, 0, 0), projected: []},
+      income: { name: "Income", months: generateRandomData(7000, 100, 0, 2, 3), projected: []},
+      miscellaneous: { name: "Miscellaneous", months: generateRandomData(200, 20, 15, 3, 5), projected: []},
+      food: {name: "Food", months: generateRandomData(120, 30, 10, 4, 8), projected: []},
+      groceries: { name: "Groceries", months: generateRandomData(400, 30, 10, 5, 10), projected: []},
+      entertainment: { name: "Entertainment", months: generateRandomData(50, 20, 4, 3, 5), projected: []}});
    }
 }
 
