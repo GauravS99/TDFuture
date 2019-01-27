@@ -6,7 +6,7 @@ export class CategoryChart extends React.Component{
 		super(props);
 		this.state = { categories: props.categories };
 	}
-	
+
 	render(){
 		const categories = this.state.categories.map(category => (
 			<tr>
@@ -32,4 +32,7 @@ export class CategoryChart extends React.Component{
 			</div>
 		);
 	}
+
+
+
 }
