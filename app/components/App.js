@@ -1,14 +1,29 @@
 import React from 'react';
 import {Sidebar} from './Sidebar'
 import {TitleBar} from './TitleBar'
+import {Accounts} from './Accounts'
+import {Grid, Row, Col} from 'react-bootstrap'
 
 export class App extends React.Component{
    render(){
-     return (
-     	 <div>
-			<Sidebar/>
-			<TitleBar name="John"/>
-         </div>
-     );			
+	const accounts = [
+		{ name: "Chequing", bal: "3000" },
+		{ name: "Savings", bal: "1500" }
+	]
+	return (
+		<Grid>
+			<Row>
+				<Col sm={3} md={6}>
+					<div>
+						<Sidebar/>
+					</div>
+				</Col>
+				<Col sm={9} md={6}>
+					<TitleBar name="John"/>
+					<Accounts accounts={ accounts }/>
+				</Col>
+			</Row>
+		</Grid>
+     );
    }
 }
