@@ -14,21 +14,31 @@ export class App extends React.Component{
 		{ name: "Savings", bal: "1500" }
 	]
 	return (
-		<Grid>
-			<Row>
-				<Col sm={3} md={6}>
-					<div>
-						<Sidebar/>
-					</div>
-				</Col>
-				<Col sm={9} md={6}>
-					<TitleBar name="John"/>
-          <Graph/>
-					<Accounts accounts={ accounts }/>
-					<HintBox hint={ "Hi I'm a hint" }/>
-				</Col>
-			</Row>
-		</Grid>
+		<div>
+			<Sidebar/>
+			<Grid>
+				<Row>
+					<Col md={1}>
+
+					</Col>
+					<Col md={11}>
+						<TitleBar name="John"/>
+					</Col>
+				</Row>
+				<Row>
+					<Col md={1}>
+
+					</Col>
+					<Col md={2}>
+						<Accounts accounts={ accounts }/>
+						<HintBox hint={ "Hi I'm a hint" }/>
+					</Col>
+					<Col md={9}>
+						<Graph/>
+					</Col>
+				</Row>
+			</Grid>
+		</div>
      );
    }
 }
