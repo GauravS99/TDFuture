@@ -12,9 +12,6 @@ export class TitleBar extends React.Component{
 		return (
 			<div className="content colorMain">
 				<div className="heading">
-					<div className="title">
-					Forecas
-					</div>	
 					<div className="right text">
 					Log Out
 					</div>

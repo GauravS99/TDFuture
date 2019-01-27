@@ -1,6 +1,6 @@
 /*Global========================================================*/
 .colorAccent{
-	background-color: gray;
+	background-color: white;
 }
 
 .text{
@@ -11,6 +11,7 @@
 .sidebar{
 	position: fixed;
 	height: 100%;
+	width: 150px;
 }
 
 .icon{
@@ -45,14 +46,31 @@
 .heading{
 	padding: 20px;
 }
+
 .title{
-	font-size: 30pt;
-	display: inline;
+	/* font-size: 30pt;
+	display: inline; */
+	width: 76px;
+	height: 28px;
+	font-family: Oxygen;
+	font-size: 22px;
+	font-weight: bold;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.27;
+	letter-spacing: normal;
+	text-align: right;
+	color: #555555;
+	margin-top: 48px;
 }
 
 .graph {
 	width: 400px;
 	height: 300px;
+}
+
+.grid{
+	margin-left: 150px;
 }
 
 

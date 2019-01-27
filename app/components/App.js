@@ -15,25 +15,25 @@ export class App extends React.Component{
 	]
 	return (
 		<div>
-			<Sidebar/>
-			<Grid>
+      <Sidebar/>
+			<Grid className="grid" fluid="true">
 				<Row>
+          <TitleBar name="John"/>
 					<Col md={1}>
-
 					</Col>
 					<Col md={11}>
-						<TitleBar name="John"/>
+						
 					</Col>
 				</Row>
 				<Row>
 					<Col md={1}>
 
 					</Col>
-					<Col md={2}>
+					<Col md={4}>
 						<Accounts accounts={ accounts }/>
 						<HintBox hint={ "Hi I'm a hint" }/>
 					</Col>
-					<Col md={9}>
+					<Col md={7}>
 						<Graph/>
 					</Col>
 				</Row>
