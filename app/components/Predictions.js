@@ -9,28 +9,31 @@ let income = require('../toInclude/income/model.json');
 
 
 export async function getPredictions(data, model) {
-	const m
+	var m
 	switch (model) {
 		case 'bills':
-			m = '../toInclude/bills/model.json';
+			m = 'https://raw.githubusercontent.com/GauravS99/TDFuture/master/app/toInclude/bills/model.json';
 			break;
 		case 'entertainment':
-			m = '../toInclude/entertainment/model.json';
+			m = 'https://raw.githubusercontent.com/GauravS99/TDFuture/master/app/toInclude/bills/model.json';
 			break;
 		case 'food':
-			m = '../toInclude/food/model.json';
+			m = 'https://raw.githubusercontent.com/GauravS99/TDFuture/master/app/toInclude/bills/model.json';
 			break;
 		case 'groceries':
-			m = '../toInclude/groceries/model.json';
+			m = 'https://raw.githubusercontent.com/GauravS99/TDFuture/master/app/toInclude/bills/model.json';
 			break;
 		case 'miscellaneous':
-			m = '../toInclude/miscellaneous/model.json';
+			m = 'https://raw.githubusercontent.com/GauravS99/TDFuture/master/app/toInclude/bills/model.json';
 			break;
 		case 'income':
-			m = '../toInclude/income/model.json';
+			m = 'https://raw.githubusercontent.com/GauravS99/TDFuture/master/app/toInclude/bills/model.json';
 			break;
-		
+		default:
+			m = ""
+			break;
 	}
-    const tModel = await tf.loadModel(m)
-	return prediction = model.predict(example);
+	const tModel = await tf.loadModel(m)
+	console.log(tModel.predict(data).dataSync())
+	return  
 }

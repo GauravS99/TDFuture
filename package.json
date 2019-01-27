@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/GauravS99/TasteOfHome#readme",
   "dependencies": {
+    "@tensorflow/tfjs": "^0.14.2",
     "babel-plugin-react-css-modules": "^3.4.2",
     "echarts": "^4.2.0-rc.2",
     "npm": "^6.3.0",
