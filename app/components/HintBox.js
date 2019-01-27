@@ -10,7 +10,7 @@ export class HintBox extends React.Component{
 	render(){
 		return (
 			<div>
-				<Alert bsStyle="info">
+				<Alert className="center-text" bsStyle="info">
 				  { this.state.hint }
 				</Alert>
 			</div>

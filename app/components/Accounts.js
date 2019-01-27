@@ -9,11 +9,11 @@ export class Accounts extends React.Component{
 	
 	render(){
 		const accounts = this.state.accounts.map(account => (
-			<Button>{account.name} - {account.bal}</Button>
+			<Button className = "account">{account.name} - {account.bal}</Button>
 		));
 		return (
 			<div>
-				<ButtonGroup vertical block>
+				<ButtonGroup  vertical block className="def-text">
 					{ accounts }
 				</ButtonGroup>
 			</div>

@@ -48,7 +48,7 @@ export class Graph extends React.Component {
 
         const theme = 'rgb(0, 204, 0)';
         return (
-        <div>
+        <div className="graph">
             <XYPlot height={400} width={500}><XAxis/><YAxis/>
                 <VerticalGridLines data={data} />
                 <HorizontalGridLines data={data} />

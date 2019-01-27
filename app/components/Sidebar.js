@@ -5,8 +5,8 @@ export class Sidebar extends React.Component{
 	render(){
 		//let source = require("../images/person-icon.png");
 		return (
-			<div className="sidebar colorAccent">	
-				<div className="title">
+			<div className="sidebar white">	
+				<div className="title headingColor def-text">
 					forecas
 				</div>	
 			</div>
