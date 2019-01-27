@@ -14,12 +14,12 @@ export class Graph extends React.Component {
                     },
                     {
                     label: "Series 2",
-                    data: [[0, 3], [1, 1], [2, 5], [3, 6], [4, 4]]
+                    data: [[2, 5], [2, 4], [2, 3], [2, 2], [2, 1]]
                     }
                 ]}
                 axes={[
-                    { primary: true, type: "linear", position: "bottom" },
-                    { type: "linear", position: "left" }
+                    { primary: true, type: "ordinal", position: "bottom" },
+                    { type: "ordinal", position: "left" }
                 ]}
                 />
             </div>
