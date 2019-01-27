@@ -50,11 +50,11 @@ export class App extends React.Component{
                   <HintBox hint={ "A penny saved is a penny earned." }/>
                 </Row>
                 <Row>
-                  <PieGraph />
+
                 </Row>
               </Col>
               <Col md={8}>
-                <Graph/>
+                <Graph data={sumData()} />
 				<CategoryChart categories={
           [{ name: "Bills", months: generateRandomData(5000, 0, 0, 0, 0), projected: [11]},
           { name: "Income", months: generateRandomData(7000, 100, 0, 2, 3), projected: [11]},
@@ -71,6 +71,14 @@ export class App extends React.Component{
    }
 }
 
+function sumData() {
+	var sum = this.state.bills.map(function (num, i) { return num + this.state.income[i]; });
+	sum = this.state.sum.map(function (num, i) { return num + this.state.groceries[i]; });
+	sum = this.state.sum.map(function (num, i) { return num + this.state.food[i]; });
+	sum = this.state.sum.map(function (num, i) { return num + this.state.miscellaneous[i]; });
+	sum = this.state.sum.map(function (num, i) { return num + this.state.entertainment[i]; });
+	return sum;
+}
 
 function generateRandomData(AVG_SPEND, STD_DEV, BIAS_AVG, BIAS_STDDEV, BIAS_PERMONTH){
   let data = [];
