@@ -31,6 +31,9 @@ export class App extends React.Component{
                 <Row>
                   <HintBox hint={ "Hi I'm a hint" }/>
                 </Row>
+                <Row>
+                  
+                </Row>
               </Col>
               <Col md={7}>
                 <Graph/>
