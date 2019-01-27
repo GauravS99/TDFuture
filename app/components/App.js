@@ -5,6 +5,7 @@ import {TitleBar} from './TitleBar'
 import {Accounts} from './Accounts'
 import {HintBox} from './HintBox'
 import {Graph} from './Graph'
+import {CategoryChart} from './CategoryChart'
 import {Grid, Row, Col} from 'react-bootstrap'
 
 export class App extends React.Component{
@@ -33,6 +34,7 @@ export class App extends React.Component{
               </Col>
               <Col md={7}>
                 <Graph/>
+				<CategoryChart categories={[{ name: "Income", thisMonth: "12", projected: "11"}]}/>
               </Col>
             </Row>
           </Grid>
