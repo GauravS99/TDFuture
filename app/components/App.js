@@ -8,7 +8,6 @@ import {Accounts} from './Accounts'
 import {HintBox} from './HintBox'
 import {Graph} from './Graph'
 import {CategoryChart} from './CategoryChart'
-import {PieGraph} from './PieGraph'
 import {Grid, Row, Col} from 'react-bootstrap'
 
 import {getPredictions} from './Predictions'
@@ -50,11 +49,11 @@ export class App extends React.Component{
                   <HintBox hint={ "A penny saved is a penny earned." }/>
                 </Row>
                 <Row>
-                  <PieGraph />
+
                 </Row>
               </Col>
               <Col md={8}>
-                <Graph/>
+                <Graph />
 				<CategoryChart categories={
           [{ name: "Bills", months: generateRandomData(5000, 0, 0, 0, 0), projected: [11]},
           { name: "Income", months: generateRandomData(7000, 100, 0, 2, 3), projected: [11]},
