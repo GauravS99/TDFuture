@@ -1,7 +1,7 @@
 import * as tf from '@tensorflow/tfjs';
 
-export function getPredictions(data, model) {
-	var m
+export async function getPredictions(data, model){
+	var m;
 	switch (model) {
 		case 'bills':
 			m = 'https://raw.githubusercontent.com/GauravS99/TDFuture/master/app/toInclude/bills/model.json';
@@ -22,9 +22,9 @@ export function getPredictions(data, model) {
 			m = 'https://raw.githubusercontent.com/GauravS99/TDFuture/master/app/toInclude/income/model.json';
 			break;
 		default:
-			m = ""
+			m = "";
 			break;
 	}
-	const tModel = tf.loadModel(m)
+	const tModel = await tf.loadModel(m);
 	return  tModel.predict(data).dataSync()
 }

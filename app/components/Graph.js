@@ -5,10 +5,6 @@ import '../../node_modules/react-vis/dist/style.css';
  
 export class Graph extends React.Component { 
     
-	constructor(props){
-		super(props)
-		this.state = {data: props.data}
-	}
     // render() {
     //     return (
     //         <div className="graph content">
@@ -37,11 +33,16 @@ export class Graph extends React.Component {
     // import '../node_modules/react-vis/dist/style.css';
     // import {XYPlot, LineSeries} from 'react-vis';
     render() {
-        const data = this.state.data;
+        const numMonths = -11;
+        let data = [];
+        for(let i = 0 ; i < this.props.data.length; i++){
+            data.push({x: (numMonths + i), y: this.props.data[i]});
+        }
 
         const theme = 'rgb(0, 204, 0)';
         return (
         <div className="graph">
+            <div className= "def-text-bold center-text">Overall Balance</div>
             <XYPlot height={400} width={500}><XAxis/><YAxis/>
                 <VerticalGridLines data={data} />
                 <HorizontalGridLines data={data} />
